@@ -27,7 +27,6 @@ var options_2 = require("./options");
 Object.defineProperty(exports, "Option", { enumerable: true, get: function () { return options_2.Option; } });
 Object.defineProperty(exports, "OptionContext", { enumerable: true, get: function () { return options_2.OptionContext; } });
 Object.defineProperty(exports, "allOptions", { enumerable: true, get: function () { return options_2.allOptions; } });
-// @ts-ignore
 var AvatarComponent = /** @class */ (function (_super) {
     __extends(AvatarComponent, _super);
     function AvatarComponent() {
@@ -35,6 +34,9 @@ var AvatarComponent = /** @class */ (function (_super) {
         _this.optionContext = new options_1.OptionContext(options_1.allOptions);
         return _this;
     }
+    AvatarComponent.prototype.componentDidMount = function () {
+        console.log('component did mount avatarcomponent');
+    };
     AvatarComponent.prototype.UNSAFE_componentWillMount = function () {
         this.updateOptionContext(this.props);
     };
@@ -43,7 +45,8 @@ var AvatarComponent = /** @class */ (function (_super) {
     };
     AvatarComponent.prototype.render = function () {
         var _a = this.props, avatarStyle = _a.avatarStyle, style = _a.style, className = _a.className;
-        return (React.createElement(avatar_1.default, { avatarStyle: avatarStyle, style: style, className: className }));
+        return (React.createElement(options_1.AvatarContext.Provider, { value: this.optionContext },
+            React.createElement(avatar_1.default, { avatarStyle: avatarStyle, style: style, className: className })));
     };
     AvatarComponent.prototype.updateOptionContext = function (props) {
         var data = {};
@@ -55,18 +58,17 @@ var AvatarComponent = /** @class */ (function (_super) {
             }
             data[option.key] = value;
         }
+        console.log(data);
         this.optionContext.setData(data);
     };
-    AvatarComponent.contextType = options_1.OptionContext; // Updated contextType declaration
     return AvatarComponent;
 }(React.Component));
 exports.default = AvatarComponent;
-// @ts-ignore
 var Piece = /** @class */ (function (_super) {
     __extends(Piece, _super);
     function Piece() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.optionContext = new options_1.OptionContext(options_1.allOptions);
+        _this.optionContext = React.useMemo(function () { return new options_1.OptionContext(options_1.allOptions); }, [options_1.allOptions]);
         return _this;
     }
     Piece.prototype.UNSAFE_componentWillMount = function () {
@@ -91,7 +93,6 @@ var Piece = /** @class */ (function (_super) {
         }
         this.optionContext.setData(data);
     };
-    Piece.contextType = options_1.OptionContext; // Updated contextType declaration
     return Piece;
 }(React.Component));
 exports.Piece = Piece;

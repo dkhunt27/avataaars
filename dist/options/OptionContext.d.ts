@@ -1,3 +1,4 @@
+import React from 'react';
 import Option from './Option';
 export interface OptionState {
     key: string;
@@ -34,3 +35,4 @@ export default class OptionContext {
     private setState;
     private notifyListener;
 }
+export declare const AvatarContext: React.Context<OptionContext>;
