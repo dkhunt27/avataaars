@@ -1,4 +1,3 @@
-import * as PropTypes from 'prop-types'
 import * as React from 'react'
 
 import Avatar, { AvatarStyle } from './avatar'
@@ -29,6 +28,7 @@ export interface Props {
   viewBox?: string
 }
 
+// @ts-ignore
 export default class AvatarComponent extends React.Component<Props> {
   static contextType = OptionContext // Updated contextType declaration
   private optionContext: OptionContext = new OptionContext(allOptions)
@@ -64,6 +64,8 @@ export default class AvatarComponent extends React.Component<Props> {
     this.optionContext.setData(data)
   }
 }
+
+// @ts-ignore
 
 export class Piece extends React.Component<Props> {
   static contextType = OptionContext // Updated contextType declaration

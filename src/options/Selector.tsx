@@ -1,4 +1,3 @@
-import * as PropTypes from 'prop-types'
 import * as React from 'react'
 
 import Option from './Option'
@@ -15,7 +14,10 @@ function getComponentOptionValue(component: React.ComponentClass) {
 export interface Props {
   option: Option
   defaultOption: React.ComponentClass | string
+  children: React.ReactNode
 }
+
+// @ts-ignore
 
 export default class Selector extends React.Component<Props> {
   static contextType = OptionContext // Updated contextType declaration
