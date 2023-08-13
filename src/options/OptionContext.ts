@@ -1,4 +1,5 @@
-import Option from './Option'
+import React from 'react'
+import Option from 'avataaars/src/options/Option'
 
 export interface OptionState {
   key: string
@@ -6,6 +7,7 @@ export interface OptionState {
   defaultValue?: string
   available: number
 }
+
 
 export type OptionContextState = { [index: string]: OptionState }
 
@@ -134,3 +136,5 @@ export default class OptionContext {
     }
   }
 }
+
+export const AvatarContext = React.createContext<OptionContext>(new OptionContext([]))

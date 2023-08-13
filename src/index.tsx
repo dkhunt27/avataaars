@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import Avatar, { AvatarStyle } from './avatar'
-import { OptionContext, allOptions } from './options'
+import { OptionContext, allOptions, AvatarContext } from './options'
 import PieceComponent from './avatar/piece'
 
 export { default as Avatar, AvatarStyle } from './avatar'
@@ -28,10 +28,14 @@ export interface Props {
   viewBox?: string
 }
 
-// @ts-ignore
+
+
 export default class AvatarComponent extends React.Component<Props> {
-  static contextType = OptionContext // Updated contextType declaration
   private optionContext: OptionContext = new OptionContext(allOptions)
+
+  componentDidMount() {
+    console.log("component did mount avatarcomponent");
+  }
 
   UNSAFE_componentWillMount() {
     this.updateOptionContext(this.props)
@@ -44,11 +48,13 @@ export default class AvatarComponent extends React.Component<Props> {
   render() {
     const { avatarStyle, style, className } = this.props
     return (
-      <Avatar
-        avatarStyle={avatarStyle as AvatarStyle}
-        style={style}
-        className={className}
-      />
+      <AvatarContext.Provider value={this.optionContext}>
+        <Avatar
+          avatarStyle={avatarStyle as AvatarStyle}
+          style={style}
+          className={className}
+        />
+      </AvatarContext.Provider>
     )
   }
 
@@ -61,15 +67,13 @@ export default class AvatarComponent extends React.Component<Props> {
       }
       data[option.key] = value
     }
+    console.log(data);
     this.optionContext.setData(data)
   }
 }
 
-// @ts-ignore
-
 export class Piece extends React.Component<Props> {
-  static contextType = OptionContext // Updated contextType declaration
-  private optionContext: OptionContext = new OptionContext(allOptions)
+  private optionContext: OptionContext = React.useMemo(()=>new OptionContext(allOptions), [allOptions])
 
   UNSAFE_componentWillMount() {
     this.updateOptionContext(this.props)

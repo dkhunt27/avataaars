@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import Option from './Option'
-import OptionContext from './OptionContext'
+import OptionContext,{AvatarContext} from './OptionContext'
 
 function getComponentOptionValue(component: React.ComponentClass) {
   const optionValue = (component as any).optionValue
@@ -17,22 +17,28 @@ export interface Props {
   children: React.ReactNode
 }
 
-// @ts-ignore
-
 export default class Selector extends React.Component<Props> {
-  static contextType = OptionContext // Updated contextType declaration
-
-  private get optionContext(): OptionContext {
-    return this.context
+  render() {
+    return (
+      <AvatarContext.Consumer>
+        {(optionContext) => (
+          <SelectorContent optionContext={optionContext} {...this.props} />
+        )}
+      </AvatarContext.Consumer>
+    );
   }
+}
 
+class SelectorContent extends React.Component<Props & { optionContext: OptionContext }> {
   componentDidMount() {
-    const { option, defaultOption } = this.props
-    const { optionContext } = this
+    const { option, defaultOption, optionContext } = this.props
+    // const { optionContext } = this
     const defaultValue =
       typeof defaultOption === 'string'
         ? defaultOption
         : getComponentOptionValue(defaultOption)
+    console.log("default value: " + defaultValue)
+    optionContext.addStateChangeListener(this.optionContextUpdate)
     optionContext.optionEnter(option.key)
     const optionState = optionContext.getOptionState(option.key)
     this.updateOptionValues()
@@ -48,19 +54,26 @@ export default class Selector extends React.Component<Props> {
   }
 
   componentWillUnmount() {
-    this.optionContext.optionExit(this.props.option.key)
+    const { optionContext } = this.props
+    optionContext.removeStateChangeListener(this.optionContextUpdate)
+    optionContext.optionExit(this.props.option.key)
   }
 
   render() {
+    const { optionContext } = this.props
     let result: React.ReactNode | null = null
     const { option, children } = this.props
-    const value = this.optionContext.getValue(option.key)!
+    const value = optionContext.getValue(option.key)! 
     React.Children.forEach(children, (child) => {
       if (getComponentOptionValue((child as any).type) === value) {
         result = child
       }
     })
     return result
+  }
+
+  private optionContextUpdate = () => {
+    this.forceUpdate()
   }
 
   private updateOptionValues() {
@@ -71,6 +84,6 @@ export default class Selector extends React.Component<Props> {
     if (new Set(values).size !== values?.length) {
       throw new Error('Duplicate values')
     }
-    this.optionContext.setOptions(option.key, values)
+    this.props.optionContext.setOptions(option.key, values)
   }
 }
