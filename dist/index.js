@@ -58,7 +58,6 @@ var AvatarComponent = /** @class */ (function (_super) {
             }
             data[option.key] = value;
         }
-        console.log(data);
         this.optionContext.setData(data);
     };
     return AvatarComponent;
@@ -68,7 +67,7 @@ var Piece = /** @class */ (function (_super) {
     __extends(Piece, _super);
     function Piece() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.optionContext = React.useMemo(function () { return new options_1.OptionContext(options_1.allOptions); }, [options_1.allOptions]);
+        _this.optionContext = new options_1.OptionContext(options_1.allOptions);
         return _this;
     }
     Piece.prototype.UNSAFE_componentWillMount = function () {

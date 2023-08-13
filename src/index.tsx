@@ -65,16 +65,12 @@ export default class AvatarComponent extends React.Component<Props> {
       }
       data[option.key] = value
     }
-    console.log(data)
     this.optionContext.setData(data)
   }
 }
 
 export class Piece extends React.Component<Props> {
-  private optionContext: OptionContext = React.useMemo(
-    () => new OptionContext(allOptions),
-    [allOptions]
-  )
+  private optionContext: OptionContext = new OptionContext(allOptions)
 
   UNSAFE_componentWillMount() {
     this.updateOptionContext(this.props)
