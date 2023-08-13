@@ -31,13 +31,16 @@ export default class Selector extends React.Component<Props> {
 
 class SelectorContent extends React.Component<Props & { optionContext: OptionContext }> {
   componentDidMount() {
+    this.setDefaultValues()
+  }
+
+  private setDefaultValues(){
     const { option, defaultOption, optionContext } = this.props
     // const { optionContext } = this
     const defaultValue =
       typeof defaultOption === 'string'
         ? defaultOption
         : getComponentOptionValue(defaultOption)
-    console.log("default value: " + defaultValue)
     optionContext.addStateChangeListener(this.optionContextUpdate)
     optionContext.optionEnter(option.key)
     const optionState = optionContext.getOptionState(option.key)
@@ -60,6 +63,7 @@ class SelectorContent extends React.Component<Props & { optionContext: OptionCon
   }
 
   render() {
+    this.setDefaultValues();
     const { optionContext } = this.props
     let result: React.ReactNode | null = null
     const { option, children } = this.props
