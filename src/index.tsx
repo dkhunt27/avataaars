@@ -28,13 +28,11 @@ export interface Props {
   viewBox?: string
 }
 
-
-
 export default class AvatarComponent extends React.Component<Props> {
   private optionContext: OptionContext = new OptionContext(allOptions)
 
   componentDidMount() {
-    console.log("component did mount avatarcomponent");
+    console.log('component did mount avatarcomponent')
   }
 
   UNSAFE_componentWillMount() {
@@ -67,13 +65,16 @@ export default class AvatarComponent extends React.Component<Props> {
       }
       data[option.key] = value
     }
-    console.log(data);
+    console.log(data)
     this.optionContext.setData(data)
   }
 }
 
 export class Piece extends React.Component<Props> {
-  private optionContext: OptionContext = React.useMemo(()=>new OptionContext(allOptions), [allOptions])
+  private optionContext: OptionContext = React.useMemo(
+    () => new OptionContext(allOptions),
+    [allOptions]
+  )
 
   UNSAFE_componentWillMount() {
     this.updateOptionContext(this.props)
