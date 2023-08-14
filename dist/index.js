@@ -29,26 +29,19 @@ Object.defineProperty(exports, "OptionContext", { enumerable: true, get: functio
 Object.defineProperty(exports, "allOptions", { enumerable: true, get: function () { return options_2.allOptions; } });
 var AvatarComponent = /** @class */ (function (_super) {
     __extends(AvatarComponent, _super);
-    function AvatarComponent() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
+    function AvatarComponent(props) {
+        var _this = _super.call(this, props) || this;
         _this.optionContext = new options_1.OptionContext(options_1.allOptions);
+        _this.updateOptionContext(props);
         return _this;
     }
-    AvatarComponent.prototype.componentDidMount = function () {
-        console.log('component did mount avatarcomponent');
-    };
-    AvatarComponent.prototype.UNSAFE_componentWillMount = function () {
-        this.updateOptionContext(this.props);
-    };
-    AvatarComponent.prototype.UNSAFE_componentWillReceiveProps = function (nextProps) {
-        this.updateOptionContext(nextProps);
-    };
     AvatarComponent.prototype.render = function () {
         var _a = this.props, avatarStyle = _a.avatarStyle, style = _a.style, className = _a.className;
         return (React.createElement(options_1.AvatarContext.Provider, { value: this.optionContext },
             React.createElement(avatar_1.default, { avatarStyle: avatarStyle, style: style, className: className })));
     };
     AvatarComponent.prototype.updateOptionContext = function (props) {
+        console.log('Avataaars: updating option context');
         var data = {};
         for (var _i = 0, allOptions_1 = options_1.allOptions; _i < allOptions_1.length; _i++) {
             var option = allOptions_1[_i];
@@ -62,7 +55,7 @@ var AvatarComponent = /** @class */ (function (_super) {
     };
     return AvatarComponent;
 }(React.Component));
-exports.default = AvatarComponent;
+exports.default = React.memo(AvatarComponent);
 var Piece = /** @class */ (function (_super) {
     __extends(Piece, _super);
     function Piece() {
