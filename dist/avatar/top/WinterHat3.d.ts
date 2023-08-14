@@ -1,5 +1,6 @@
 import * as React from 'react';
-export default class WinterHat3 extends React.Component {
+import { Props } from '../types';
+export default class WinterHat3 extends React.Component<Props> {
     static optionValue: string;
     private filter1;
     private mask1;

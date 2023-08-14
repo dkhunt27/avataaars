@@ -3,15 +3,16 @@ import { uniqueId } from 'lodash'
 
 import FacialHair from './facialHair'
 import HairColor from './HairColor'
+import { Props } from '../types'
 
-export default class LongHairDreads extends React.Component {
+export default class LongHairDreads extends React.Component<Props> {
   static optionValue = 'LongHairDreads'
   private mask1 = uniqueId('react-mask-')
   private mask2 = uniqueId('react-mask-')
   private path1 = uniqueId('react-path-')
   private path2 = uniqueId('react-path-')
 
-  render () {
+  render() {
     const { mask1, mask2, path1, path2 } = this
     return (
       <g id='Top' strokeWidth='1' fillRule='evenodd'>

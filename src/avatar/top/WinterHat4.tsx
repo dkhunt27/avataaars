@@ -3,8 +3,9 @@ import { uniqueId } from 'lodash'
 
 import FacialHair from './facialHair'
 import HatColor from './HatColor'
+import { Props } from '../types'
 
-export default class WinterHat4 extends React.Component {
+export default class WinterHat4 extends React.Component<Props> {
   static optionValue = 'WinterHat4'
   private filter1 = uniqueId('react-filter-')
   private mask1 = uniqueId('react-mask-')
@@ -17,7 +18,7 @@ export default class WinterHat4 extends React.Component {
   private path4 = uniqueId('react-path-')
   private path5 = uniqueId('react-path-')
 
-  render () {
+  render() {
     const {
       filter1,
       mask1,
@@ -28,7 +29,7 @@ export default class WinterHat4 extends React.Component {
       path2,
       path3,
       path4,
-      path5
+      path5,
     } = this
     return (
       <g id='Top'>
@@ -52,8 +53,7 @@ export default class WinterHat4 extends React.Component {
             width='101.4%'
             height='106.8%'
             filterUnits='objectBoundingBox'
-            id={filter1}
-          >
+            id={filter1}>
             <feOffset
               dx='0'
               dy='2'
@@ -77,14 +77,12 @@ export default class WinterHat4 extends React.Component {
         <g id='Mask' />
         <g
           id='Top/Accessories/Winter-Hat-4'
-          transform='translate(-1.000000, 0.000000)'
-        >
+          transform='translate(-1.000000, 0.000000)'>
           <g
             id='hat'
             strokeWidth='1'
             fillRule='evenodd'
-            transform='translate(65.000000, 4.000000)'
-          >
+            transform='translate(65.000000, 4.000000)'>
             <mask id={mask2} fill='white'>
               <use xlinkHref={'#' + path1} />
             </mask>

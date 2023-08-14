@@ -3,8 +3,9 @@ import { uniqueId } from 'lodash'
 
 import FacialHair from './facialHair'
 import HatColor from './HatColor'
+import { Props } from '../types'
 
-export default class WinterHat3 extends React.Component {
+export default class WinterHat3 extends React.Component<Props> {
   static optionValue = 'WinterHat3'
   private filter1 = uniqueId('react-filter-')
   private mask1 = uniqueId('react-mask-')
@@ -29,8 +30,7 @@ export default class WinterHat3 extends React.Component {
             width='101.4%'
             height='106.8%'
             filterUnits='objectBoundingBox'
-            id={filter1}
-          >
+            id={filter1}>
             <feOffset
               dx='0'
               dy='2'
@@ -54,14 +54,12 @@ export default class WinterHat3 extends React.Component {
         <g id='Mask' />
         <g
           id='Top/Accessories/Winter-Hat-3'
-          transform='translate(-1.000000, 0.000000)'
-        >
+          transform='translate(-1.000000, 0.000000)'>
           <g
             id='hat'
             strokeWidth='1'
             fillRule='evenodd'
-            transform='translate(67.000000, 12.000000)'
-          >
+            transform='translate(67.000000, 12.000000)'>
             <circle id='puff' fill='#F4F4F4' cx='66' cy='8' r='20' />
             <mask id={mask2} fill='white'>
               <use xlinkHref={'#' + path1} />

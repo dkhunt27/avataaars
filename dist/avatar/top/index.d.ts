@@ -1,4 +1,5 @@
 import * as React from 'react';
-export default class Top extends React.Component {
+import { Props } from '../types';
+export default class Top extends React.Component<Props> {
     render(): React.JSX.Element;
 }

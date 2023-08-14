@@ -1,5 +1,6 @@
 import * as React from 'react';
-export default class LongHairDreads extends React.Component {
+import { Props } from '../types';
+export default class LongHairDreads extends React.Component<Props> {
     static optionValue: string;
     private mask1;
     private mask2;

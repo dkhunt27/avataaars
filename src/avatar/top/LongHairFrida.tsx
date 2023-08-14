@@ -2,8 +2,9 @@ import * as React from 'react'
 import { uniqueId } from 'lodash'
 
 import FacialHair from './facialHair'
+import { Props } from '../types'
 
-export default class LongHairFrida extends React.Component {
+export default class LongHairFrida extends React.Component<Props> {
   static optionValue = 'LongHairFrida'
   private filter1 = uniqueId('react-filter-')
   private filter2 = uniqueId('react-filter-')
@@ -16,7 +17,7 @@ export default class LongHairFrida extends React.Component {
   private path1 = uniqueId('react-path-')
   private path2 = uniqueId('react-path-')
 
-  render () {
+  render() {
     const {
       filter1,
       filter2,
@@ -27,7 +28,7 @@ export default class LongHairFrida extends React.Component {
       filter7,
       mask1,
       path1,
-      path2
+      path2,
     } = this
     return (
       <g id='Top' strokeWidth='1' fillRule='evenodd'>
