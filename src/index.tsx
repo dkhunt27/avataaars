@@ -28,19 +28,12 @@ export interface Props {
   viewBox?: string
 }
 
-export default class AvatarComponent extends React.Component<Props> {
+class AvatarComponent extends React.Component<Props> {
   private optionContext: OptionContext = new OptionContext(allOptions)
 
-  componentDidMount() {
-    console.log('component did mount avatarcomponent')
-  }
-
-  UNSAFE_componentWillMount() {
-    this.updateOptionContext(this.props)
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps: Props) {
-    this.updateOptionContext(nextProps)
+  constructor(props: Props) {
+    super(props)
+    this.updateOptionContext(props)
   }
 
   render() {
@@ -57,6 +50,7 @@ export default class AvatarComponent extends React.Component<Props> {
   }
 
   private updateOptionContext(props: Props) {
+    console.log('Avataaars: updating option context')
     const data: { [index: string]: string } = {}
     for (const option of allOptions) {
       const value = props[option.key]
@@ -68,6 +62,8 @@ export default class AvatarComponent extends React.Component<Props> {
     this.optionContext.setData(data)
   }
 }
+
+export default React.memo(AvatarComponent)
 
 export class Piece extends React.Component<Props> {
   private optionContext: OptionContext = new OptionContext(allOptions)
