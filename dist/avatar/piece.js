@@ -31,7 +31,7 @@ var AvatarStyle;
 (function (AvatarStyle) {
     AvatarStyle["Circle"] = "Circle";
     AvatarStyle["Transparent"] = "Transparent";
-})(AvatarStyle = exports.AvatarStyle || (exports.AvatarStyle = {}));
+})(AvatarStyle || (exports.AvatarStyle = AvatarStyle = {}));
 var PieceComponent = /** @class */ (function (_super) {
     __extends(PieceComponent, _super);
     function PieceComponent() {
