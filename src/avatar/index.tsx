@@ -26,12 +26,12 @@ export function Avatar(props: Props) {
   const mask2 = uniqueId('react-mask-')
   const mask3 = uniqueId('react-mask-')
 
-  const { avatarStyle } = this.props
+  const { avatarStyle } = props
   const circle = avatarStyle === AvatarStyle.Circle
   return (
     <svg
-      style={this.props.style}
-      className={this.props.className}
+      style={props.style}
+      className={props.className}
       width='264px'
       height='280px'
       viewBox='0 0 264 280'
