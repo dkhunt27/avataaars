@@ -8,12 +8,4 @@ export interface Props {
     className?: string;
     style?: React.CSSProperties;
 }
-export default class Avatar extends React.Component<Props> {
-    private path1;
-    private path2;
-    private path3;
-    private mask1;
-    private mask2;
-    private mask3;
-    render(): React.JSX.Element;
-}
+export default function Avatar(props: Props): React.JSX.Element;

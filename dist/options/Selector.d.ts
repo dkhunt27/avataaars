@@ -2,9 +2,7 @@ import * as React from 'react';
 import Option from './Option';
 export interface Props {
     option: Option;
-    defaultOption: React.ComponentClass | string;
+    defaultOption: React.ComponentClass;
     children: React.ReactNode;
 }
-export default class Selector extends React.Component<Props> {
-    render(): React.JSX.Element;
-}
+export default function Selector(props: Props): React.ReactNode;

@@ -1,90 +1,24 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Piece = exports.allOptions = exports.OptionContext = exports.Option = exports.AvatarStyle = exports.Avatar = void 0;
+exports.Piece = exports.Avatar = exports.allOptions = exports.Option = exports.AvatarStyle = void 0;
 var React = require("react");
 var avatar_1 = require("./avatar");
 var options_1 = require("./options");
 var piece_1 = require("./avatar/piece");
 var avatar_2 = require("./avatar");
-Object.defineProperty(exports, "Avatar", { enumerable: true, get: function () { return avatar_2.default; } });
 Object.defineProperty(exports, "AvatarStyle", { enumerable: true, get: function () { return avatar_2.AvatarStyle; } });
 var options_2 = require("./options");
 Object.defineProperty(exports, "Option", { enumerable: true, get: function () { return options_2.Option; } });
-Object.defineProperty(exports, "OptionContext", { enumerable: true, get: function () { return options_2.OptionContext; } });
 Object.defineProperty(exports, "allOptions", { enumerable: true, get: function () { return options_2.allOptions; } });
-var AvatarComponent = /** @class */ (function (_super) {
-    __extends(AvatarComponent, _super);
-    function AvatarComponent(props) {
-        var _this = _super.call(this, props) || this;
-        _this.optionContext = new options_1.OptionContext(options_1.allOptions);
-        _this.updateOptionContext(props);
-        return _this;
-    }
-    AvatarComponent.prototype.render = function () {
-        var _a = this.props, avatarStyle = _a.avatarStyle, style = _a.style, className = _a.className;
-        return (React.createElement(options_1.AvatarContext.Provider, { value: this.optionContext },
-            React.createElement(avatar_1.default, { avatarStyle: avatarStyle, style: style, className: className })));
-    };
-    AvatarComponent.prototype.updateOptionContext = function (props) {
-        console.log('Avataaars: updating option context');
-        var data = {};
-        for (var _i = 0, allOptions_1 = options_1.allOptions; _i < allOptions_1.length; _i++) {
-            var option = allOptions_1[_i];
-            var value = props[option.key];
-            if (!value) {
-                continue;
-            }
-            data[option.key] = value;
-        }
-        this.optionContext.setData(data);
-    };
-    return AvatarComponent;
-}(React.Component));
-exports.default = React.memo(AvatarComponent);
-var Piece = /** @class */ (function (_super) {
-    __extends(Piece, _super);
-    function Piece() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.optionContext = new options_1.OptionContext(options_1.allOptions);
-        return _this;
-    }
-    Piece.prototype.UNSAFE_componentWillMount = function () {
-        this.updateOptionContext(this.props);
-    };
-    Piece.prototype.UNSAFE_componentWillReceiveProps = function (nextProps) {
-        this.updateOptionContext(nextProps);
-    };
-    Piece.prototype.render = function () {
-        var _a = this.props, avatarStyle = _a.avatarStyle, style = _a.style, pieceType = _a.pieceType, pieceSize = _a.pieceSize, viewBox = _a.viewBox;
-        return (React.createElement(piece_1.default, { avatarStyle: avatarStyle, style: style, pieceType: pieceType, pieceSize: pieceSize, viewBox: viewBox }));
-    };
-    Piece.prototype.updateOptionContext = function (props) {
-        var data = {};
-        for (var _i = 0, allOptions_2 = options_1.allOptions; _i < allOptions_2.length; _i++) {
-            var option = allOptions_2[_i];
-            var value = props[option.key];
-            if (!value) {
-                continue;
-            }
-            data[option.key] = value;
-        }
-        this.optionContext.setData(data);
-    };
-    return Piece;
-}(React.Component));
+function Avatar(props) {
+    var avatarStyle = props.avatarStyle, style = props.style, className = props.className;
+    return (React.createElement(options_1.AvatarContext.Provider, { value: props },
+        React.createElement(avatar_1.default, { avatarStyle: avatarStyle, style: style, className: className })));
+}
+exports.Avatar = Avatar;
+function Piece(props) {
+    var avatarStyle = props.avatarStyle, style = props.style, pieceType = props.pieceType;
+    return (React.createElement(options_1.AvatarContext.Provider, { value: props },
+        React.createElement(piece_1.default, { avatarStyle: avatarStyle, style: style, pieceType: pieceType })));
+}
 exports.Piece = Piece;
