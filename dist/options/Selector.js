@@ -12,18 +12,23 @@ function getComponentOptionValue(component) {
 function Selector(props) {
     var avatarContext = React.useContext(avatarContext_1.AvatarContext);
     function getSelectedOption() {
-        var selectedOptionType = avatarContext[props.option.key];
+        var _a;
+        var selectedOptionType = (_a = avatarContext[props.option.key]) !== null && _a !== void 0 ? _a : props.defaultOption.name;
+        console.log('default: ' +
+            props.defaultOption.name +
+            ' selected: ' +
+            avatarContext[props.option.key]);
         var result;
         React.Children.forEach(props.children, function (child) {
             if (getComponentOptionValue(child.type) === selectedOptionType) {
                 result = child;
             }
         });
-        if (result === undefined) {
-            return props.defaultOption;
+        if (result) {
+            return result;
         }
         else {
-            return result;
+            return React.createElement(React.Fragment, null);
         }
     }
     var selectedOption = React.useMemo(function () { return getSelectedOption(); }, [avatarContext]);
