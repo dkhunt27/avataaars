@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Option from './Option';
 export interface Props {
     option: Option;
