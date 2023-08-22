@@ -173,6 +173,11 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+import-sort-style-renke@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/import-sort-style-renke/-/import-sort-style-renke-4.2.0.tgz#20ea31a155be1bd8c4aa10231868c1ac2d9fd1e1"
+  integrity sha512-Bh3KYTKEUiOLthAmpZLrzxtwvWfmy8S8pxjV+Xer280sojDkC+QNysjziic/ZWhoP4m8AypAsIebEM2elWu6+A==
+
 inflight@^1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/inflight/-/inflight-1.0.6.tgz#49bd6331d7d02d0c09bc910a1075ba8165b56df9"
