@@ -1,13 +1,13 @@
 import * as React from 'react'
 
 import Avatar, { AvatarStyle } from './avatar'
-import { OptionContext, allOptions, AvatarContext } from './options'
+import { AvatarContext } from './options'
 import PieceComponent from './avatar/piece'
 
 export { default as Avatar, AvatarStyle } from './avatar'
 export { Option, allOptions } from './options'
 
-import { Props } from './options/OptionContext'
+import { Props } from './options/avatarContext'
 
 function AvatarComponent(props: Props) {
   const { avatarStyle, style, className } = props

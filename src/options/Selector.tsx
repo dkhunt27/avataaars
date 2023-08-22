@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react'
+import React, { useContext, useMemo } from 'react'
 
 import Option from './Option'
-import { AvatarContext } from './OptionContext'
+import { AvatarContext } from './avatarContext'
 
 function getComponentOptionValue(component: React.ComponentClass) {
   const optionValue = (component as any).optionValue
