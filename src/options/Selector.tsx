@@ -13,25 +13,26 @@ function getComponentOptionValue(component: React.ComponentClass) {
 
 export interface Props {
   option: Option
-  defaultOption: React.ComponentClass | string
+  defaultOption: React.ComponentClass
   children: React.ReactNode
 }
 
 export default function Selector(props: Props) {
   const avatarContext = React.useContext(AvatarContext)
 
-  function getSelectedOption() {
-    const selectedOptionType = avatarContext[props.option.key]
+  function getSelectedOption(): React.ReactNode {
+    const selectedOptionType =
+      avatarContext[props.option.key] ?? props.defaultOption.name
     let result
     React.Children.forEach(props.children, (child) => {
       if (getComponentOptionValue((child as any).type) === selectedOptionType) {
         result = child
       }
     })
-    if (result === undefined) {
-      return props.defaultOption
-    } else {
+    if (result) {
       return result
+    } else {
+      return <></>
     }
   }
 

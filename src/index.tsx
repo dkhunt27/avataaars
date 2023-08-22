@@ -1,19 +1,20 @@
 import * as React from 'react'
 
-import Avatar, { AvatarStyle } from './avatar'
+import AvatarComponent, { AvatarStyle } from './avatar'
 import { AvatarContext } from './options'
 import PieceComponent from './avatar/piece'
 
-export { default as Avatar, AvatarStyle } from './avatar'
+export { AvatarStyle } from './avatar'
 export { Option, allOptions } from './options'
 
 import { Props } from './options/avatarContext'
 
-function AvatarComponent(props: Props) {
+export function Avatar(props: Props) {
   const { avatarStyle, style, className } = props
+  console.log('avatar props: ' + Object.keys(props))
   return (
     <AvatarContext.Provider value={props}>
-      <Avatar
+      <AvatarComponent
         avatarStyle={avatarStyle as AvatarStyle}
         style={style}
         className={className}
@@ -21,8 +22,6 @@ function AvatarComponent(props: Props) {
     </AvatarContext.Provider>
   )
 }
-
-export default React.memo(AvatarComponent)
 
 // export class Piece extends React.Component<Props> {
 //   private optionContext: OptionContext = new OptionContext(allOptions)
