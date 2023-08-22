@@ -11,7 +11,6 @@ import { Props } from './options/avatarContext'
 
 export function Avatar(props: Props) {
   const { avatarStyle, style, className } = props
-  console.log('avatar props: ' + Object.keys(props))
   return (
     <AvatarContext.Provider value={props}>
       <AvatarComponent

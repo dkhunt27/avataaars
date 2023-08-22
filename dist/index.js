@@ -12,7 +12,6 @@ Object.defineProperty(exports, "Option", { enumerable: true, get: function () { 
 Object.defineProperty(exports, "allOptions", { enumerable: true, get: function () { return options_2.allOptions; } });
 function Avatar(props) {
     var avatarStyle = props.avatarStyle, style = props.style, className = props.className;
-    console.log('avatar props: ' + Object.keys(props));
     return (React.createElement(options_1.AvatarContext.Provider, { value: props },
         React.createElement(avatar_1.default, { avatarStyle: avatarStyle, style: style, className: className })));
 }
