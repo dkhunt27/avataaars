@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react'
+import * as React from 'react'
 
 import Option from './Option'
 import { AvatarContext } from './avatarContext'
@@ -18,7 +18,7 @@ export interface Props {
 }
 
 export default function Selector(props: Props) {
-  const avatarContext = useContext(AvatarContext)
+  const avatarContext = React.useContext(AvatarContext)
 
   function getSelectedOption() {
     const selectedOptionType = avatarContext[props.option.key]
@@ -35,7 +35,10 @@ export default function Selector(props: Props) {
     }
   }
 
-  const selectedOption = useMemo(() => getSelectedOption(), [avatarContext])
+  const selectedOption = React.useMemo(
+    () => getSelectedOption(),
+    [avatarContext]
+  )
 
   return selectedOption
 }
