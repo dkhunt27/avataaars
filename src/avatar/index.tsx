@@ -18,7 +18,7 @@ export interface Props {
   style?: React.CSSProperties
 }
 
-export function Avatar(props: Props) {
+export default function Avatar(props: Props) {
   const path1 = uniqueId('react-path-')
   const path2 = uniqueId('react-path-')
   const path3 = uniqueId('react-path-')
