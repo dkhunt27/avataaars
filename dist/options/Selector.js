@@ -14,10 +14,6 @@ function Selector(props) {
     function getSelectedOption() {
         var _a;
         var selectedOptionType = (_a = avatarContext[props.option.key]) !== null && _a !== void 0 ? _a : props.defaultOption.name;
-        console.log('default: ' +
-            props.defaultOption.name +
-            ' selected: ' +
-            avatarContext[props.option.key]);
         var result;
         React.Children.forEach(props.children, function (child) {
             if (getComponentOptionValue(child.type) === selectedOptionType) {

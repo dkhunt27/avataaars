@@ -23,39 +23,15 @@ export function Avatar(props: Props) {
   )
 }
 
-// export class Piece extends React.Component<Props> {
-//   private optionContext: OptionContext = new OptionContext(allOptions)
-
-//   UNSAFE_componentWillMount() {
-//     this.updateOptionContext(this.props)
-//   }
-
-//   UNSAFE_componentWillReceiveProps(nextProps: Props) {
-//     this.updateOptionContext(nextProps)
-//   }
-
-//   render() {
-//     const { avatarStyle, style, pieceType, pieceSize, viewBox } = this.props
-//     return (
-//       <PieceComponent
-//         avatarStyle={avatarStyle as AvatarStyle}
-//         style={style}
-//         pieceType={pieceType}
-//         pieceSize={pieceSize}
-//         viewBox={viewBox}
-//       />
-//     )
-//   }
-
-//   private updateOptionContext(props: Props) {
-//     const data: { [index: string]: string } = {}
-//     for (const option of allOptions) {
-//       const value = props[option.key]
-//       if (!value) {
-//         continue
-//       }
-//       data[option.key] = value
-//     }
-//     this.optionContext.setData(data)
-//   }
-// }
+export function Piece(props: Props) {
+  const { avatarStyle, style, pieceType } = props
+  return (
+    <AvatarContext.Provider value={props}>
+      <PieceComponent
+        avatarStyle={avatarStyle as AvatarStyle}
+        style={style}
+        pieceType={pieceType}
+      />
+    </AvatarContext.Provider>
+  )
+}
