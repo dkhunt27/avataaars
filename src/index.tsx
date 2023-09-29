@@ -1,20 +1,18 @@
 import * as React from 'react'
 
-import AvatarComponent, { AvatarStyle } from './avatar'
+import AvatarComponent from './avatar'
 import { AvatarContext } from './options'
 import PieceComponent from './avatar/piece'
-
-export { AvatarStyle } from './avatar'
 export { Option, allOptions } from './options'
 
-import { Props } from './options/avatarContext'
+import { Props } from './types'
 
 export function Avatar(props: Props) {
   const { avatarStyle, style, className } = props
   return (
     <AvatarContext.Provider value={props}>
       <AvatarComponent
-        avatarStyle={avatarStyle as AvatarStyle}
+        avatarStyle={avatarStyle}
         style={style}
         className={className}
       />
@@ -23,14 +21,14 @@ export function Avatar(props: Props) {
 }
 
 export function Piece(props: Props) {
-  const { avatarStyle, style, pieceType, pieceSize, viewBox } = props
+  const { style, pieceType, pieceHeight, pieceWidth, viewBox } = props
   return (
     <AvatarContext.Provider value={props}>
       <PieceComponent
-        avatarStyle={avatarStyle as AvatarStyle}
         style={style}
         pieceType={pieceType}
-        pieceSize={pieceSize}
+        pieceHeight={pieceHeight}
+        pieceWidth={pieceWidth}
         viewBox={viewBox}
       />
     </AvatarContext.Provider>

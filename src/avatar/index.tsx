@@ -6,14 +6,10 @@ import Clothe from './clothes'
 import Face from './face'
 import Skin from './Skin'
 import Top from './top'
-
-export enum AvatarStyle {
-  Circle = 'Circle',
-  Transparent = 'Transparent',
-}
+import { AvatarStyleOptions } from '../config'
 
 export interface Props {
-  avatarStyle: AvatarStyle
+  avatarStyle: typeof AvatarStyleOptions[number]
   className?: string
   style?: React.CSSProperties
 }
@@ -27,7 +23,7 @@ export default function Avatar(props: Props) {
   const mask3 = uniqueId('react-mask-')
 
   const { avatarStyle } = props
-  const circle = avatarStyle === AvatarStyle.Circle
+  const circle = avatarStyle === 'Circle'
   return (
     <svg
       style={props.style}

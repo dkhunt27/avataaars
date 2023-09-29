@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AvatarStyle = void 0;
 var React = require("react");
 var lodash_1 = require("lodash");
 var accessories_1 = require("./top/accessories");
@@ -8,11 +7,6 @@ var clothes_1 = require("./clothes");
 var face_1 = require("./face");
 var Skin_1 = require("./Skin");
 var top_1 = require("./top");
-var AvatarStyle;
-(function (AvatarStyle) {
-    AvatarStyle["Circle"] = "Circle";
-    AvatarStyle["Transparent"] = "Transparent";
-})(AvatarStyle || (exports.AvatarStyle = AvatarStyle = {}));
 function Avatar(props) {
     var path1 = (0, lodash_1.uniqueId)('react-path-');
     var path2 = (0, lodash_1.uniqueId)('react-path-');
@@ -21,7 +15,7 @@ function Avatar(props) {
     var mask2 = (0, lodash_1.uniqueId)('react-mask-');
     var mask3 = (0, lodash_1.uniqueId)('react-mask-');
     var avatarStyle = props.avatarStyle;
-    var circle = avatarStyle === AvatarStyle.Circle;
+    var circle = avatarStyle === 'Circle';
     return (React.createElement("svg", { style: props.style, className: props.className, width: '264px', height: '280px', viewBox: '0 0 264 280', version: '1.1', xmlns: 'http://www.w3.org/2000/svg', xmlnsXlink: 'http://www.w3.org/1999/xlink' },
         React.createElement("desc", null, "Created with getavataaars.com"),
         React.createElement("defs", null,

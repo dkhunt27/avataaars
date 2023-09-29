@@ -1,10 +1,7 @@
 import * as React from 'react';
-export declare enum AvatarStyle {
-    Circle = "Circle",
-    Transparent = "Transparent"
-}
+import { AvatarStyleOptions } from '../config';
 export interface Props {
-    avatarStyle: AvatarStyle;
+    avatarStyle: typeof AvatarStyleOptions[number];
     className?: string;
     style?: React.CSSProperties;
 }

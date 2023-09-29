@@ -1,12 +1,9 @@
 import * as React from 'react';
-export declare enum AvatarStyle {
-    Circle = "Circle",
-    Transparent = "Transparent"
-}
+import { PieceType } from '../types';
 export interface Props {
-    pieceSize?: string;
-    pieceType?: string;
-    avatarStyle: AvatarStyle;
+    pieceWidth?: number;
+    pieceHeight?: number;
+    pieceType?: PieceType;
     style?: React.CSSProperties;
     viewBox?: string;
 }
