@@ -23,13 +23,14 @@ export function Avatar(props: Props) {
 }
 
 export function Piece(props: Props) {
-  const { avatarStyle, style, pieceType } = props
+  const { avatarStyle, style, pieceType, pieceSize } = props
   return (
     <AvatarContext.Provider value={props}>
       <PieceComponent
         avatarStyle={avatarStyle as AvatarStyle}
         style={style}
         pieceType={pieceType}
+        pieceSize={pieceSize}
       />
     </AvatarContext.Provider>
   )
