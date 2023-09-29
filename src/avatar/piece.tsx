@@ -25,8 +25,6 @@ export interface Props {
   viewBox?: string
 }
 
-// export default class PieceComponent extends React.Component<Props> {
-  
 export default function PieceComponent(props: Props) {
   return (
     <svg

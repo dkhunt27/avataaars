@@ -17,8 +17,8 @@ function Avatar(props) {
 }
 exports.Avatar = Avatar;
 function Piece(props) {
-    var avatarStyle = props.avatarStyle, style = props.style, pieceType = props.pieceType, pieceSize = props.pieceSize;
+    var avatarStyle = props.avatarStyle, style = props.style, pieceType = props.pieceType, pieceSize = props.pieceSize, viewBox = props.viewBox;
     return (React.createElement(options_1.AvatarContext.Provider, { value: props },
-        React.createElement(piece_1.default, { avatarStyle: avatarStyle, style: style, pieceType: pieceType, pieceSize: pieceSize })));
+        React.createElement(piece_1.default, { avatarStyle: avatarStyle, style: style, pieceType: pieceType, pieceSize: pieceSize, viewBox: viewBox })));
 }
 exports.Piece = Piece;

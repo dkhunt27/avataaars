@@ -17,7 +17,6 @@ var AvatarStyle;
     AvatarStyle["Circle"] = "Circle";
     AvatarStyle["Transparent"] = "Transparent";
 })(AvatarStyle || (exports.AvatarStyle = AvatarStyle = {}));
-// export default class PieceComponent extends React.Component<Props> {
 function PieceComponent(props) {
     var _a, _b;
     return (React.createElement("svg", { style: props.style, width: "".concat((_a = props.pieceSize) !== null && _a !== void 0 ? _a : "264", "px"), height: "".concat((_b = props.pieceSize) !== null && _b !== void 0 ? _b : "280", "px"), viewBox: props.viewBox || "0 0 264 280", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink" },
