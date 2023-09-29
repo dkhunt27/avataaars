@@ -49,13 +49,18 @@ export interface AvataaarSettings {
   avatarStyle: typeof AvatarStyleOptions[number],
   className?: string
   style?: React.CSSProperties
+}
+
+export interface PieceSettings {
+  style?: React.CSSProperties
   pieceType?: PieceType
   pieceHeight?: number
   pieceWidth?: number
   viewBox?: string
 }
 
-export type Props = AvataaarCategories & AvataaarSettings
+export type AvataaarProps = AvataaarCategories & AvataaarSettings
+export type PieceProps = AvataaarCategories & PieceSettings
 
 export type AvataaarType = AvataaarCategories & {
   avatarStyle: typeof AvatarStyleOptions[number],

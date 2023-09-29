@@ -16,8 +16,8 @@ var mouth_1 = require("./face/mouth");
 var nose_1 = require("./face/nose");
 var Skin_1 = require("./Skin");
 function PieceComponent(props) {
-    var style = props.style, _a = props.pieceWidth, pieceWidth = _a === void 0 ? 264 : _a, _b = props.pieceHeight, pieceHeight = _b === void 0 ? 280 : _b, viewBox = props.viewBox, pieceType = props.pieceType;
-    return (React.createElement("svg", { style: style, width: "".concat(pieceWidth.toString(), "px"), height: "".concat(pieceHeight.toString(), "px"), viewBox: viewBox || "0 0 264 280", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink" },
+    var style = props.style, _a = props.pieceWidth, pieceWidth = _a === void 0 ? 264 : _a, _b = props.pieceHeight, pieceHeight = _b === void 0 ? 280 : _b, _c = props.viewBox, viewBox = _c === void 0 ? "0 0 264 280" : _c, pieceType = props.pieceType;
+    return (React.createElement("svg", { style: style, width: "".concat(pieceWidth.toString(), "px"), height: "".concat(pieceHeight.toString(), "px"), viewBox: viewBox, version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink" },
         pieceType === 'accessories' && React.createElement(accessories_1.default, null),
         pieceType === 'clothe' && React.createElement(clothes_1.default, null),
         pieceType === 'clotheColor' && React.createElement(Colors_1.default, { maskID: "0001" }),

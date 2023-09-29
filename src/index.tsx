@@ -4,9 +4,9 @@ import AvatarComponent from './avatar'
 import { AvatarContext } from './options'
 import PieceComponent from './avatar/piece'
 export { Option, allOptions } from './options'
-import { Props } from './types'
+import { AvataaarProps, PieceProps } from './types'
 
-export function Avatar(props: Props) {
+export function Avatar(props: AvataaarProps) {
   const { avatarStyle, style, className } = props
   return (
     <AvatarContext.Provider value={props}>
@@ -19,7 +19,7 @@ export function Avatar(props: Props) {
   )
 }
 
-export function Piece(props: Props) {
+export function Piece(props: PieceProps) {
   const { style, pieceType, pieceHeight, pieceWidth, viewBox } = props
   return (
     <AvatarContext.Provider value={props}>

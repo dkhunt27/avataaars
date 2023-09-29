@@ -26,13 +26,13 @@ export interface Props {
 }
 
 export default function PieceComponent(props: Props) {
-  const {style, pieceWidth = 264, pieceHeight = 280, viewBox, pieceType} = props;
+  const {style, pieceWidth = 264, pieceHeight = 280, viewBox = "0 0 264 280", pieceType} = props;
   return (
     <svg
       style={style}
       width={`${pieceWidth.toString()}px`}
       height={`${pieceHeight.toString()}px`}
-      viewBox={viewBox || "0 0 264 280"}
+      viewBox={viewBox}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink">
