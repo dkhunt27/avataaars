@@ -4,7 +4,6 @@ import AvatarComponent from './avatar'
 import { AvatarContext } from './options'
 import PieceComponent from './avatar/piece'
 export { Option, allOptions } from './options'
-
 import { Props } from './types'
 
 export function Avatar(props: Props) {
@@ -34,3 +33,6 @@ export function Piece(props: Props) {
     </AvatarContext.Provider>
   )
 }
+
+export * from './config';
+export * from './types';

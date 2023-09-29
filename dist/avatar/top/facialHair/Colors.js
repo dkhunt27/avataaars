@@ -24,9 +24,9 @@ function makeColor(name, color) {
             return _super !== null && _super.apply(this, arguments) || this;
         }
         ColorComponent.prototype.render = function () {
-            return (React.createElement("g", { id: 'Color/Hair/Brown', mask: "url(#".concat(this.props.maskID, ")"), fill: color },
+            return (React.createElement("g", { id: "Color/FacialHair/".concat(this.props.maskID), mask: "url(#".concat(this.props.maskID, ")"), fill: color },
                 React.createElement("g", { transform: 'translate(-32.000000, 0.000000)', id: 'Color' },
-                    React.createElement("rect", { x: '0', y: '0', width: '264', height: '244' }))));
+                    React.createElement("rect", { x: '0', y: '0', width: '264', height: '280' }))));
         };
         return ColorComponent;
     }(React.Component));

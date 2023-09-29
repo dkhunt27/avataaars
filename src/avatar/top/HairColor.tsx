@@ -11,7 +11,7 @@ function makeColor (name: string, color: string) {
     render () {
       return (
         <g
-          id='Skin/👶🏽-03-Brown'
+          id={`Color/Hair/${this.props.maskID}`}
           mask={`url(#${this.props.maskID})`}
           fill={color}>
           <g transform='translate(0.000000, 0.000000) ' id='Color'>

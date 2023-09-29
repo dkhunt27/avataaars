@@ -1,3 +1,5 @@
+import { AvataaarType } from "./types";
+
 export const AvatarStyleOptions = ['Circle', 'Transparent'] as const;
 export const TopTypeOptions = [
     'NoHair',
@@ -179,7 +181,7 @@ export const AvataaarOptions = {
   topType: TopTypeOptions,
 };
 
-export const AvataaarDefaults = {
+export const AvataaarDefaults: AvataaarType = {
   accessoriesType: 'Blank',
   avatarStyle: 'Transparent',
   clotheColor: 'Gray02',

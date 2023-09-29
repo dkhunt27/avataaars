@@ -1,3 +1,4 @@
+import { AvataaarType } from "./types";
 export declare const AvatarStyleOptions: readonly ["Circle", "Transparent"];
 export declare const TopTypeOptions: readonly ["NoHair", "Eyepatch", "Hat", "Hijab", "LongHairBigHair", "LongHairBob", "LongHairBun", "LongHairCurly", "LongHairCurvy", "LongHairDreads", "LongHairFrida", "LongHairFro", "LongHairFroBand", "LongHairMiaWallace", "LongHairNotTooLong", "LongHairShavedSides", "LongHairStraight", "LongHairStraight2", "LongHairStraightStrand", "ShortHairDreads01", "ShortHairDreads02", "ShortHairFrizzle", "ShortHairShaggyMullet", "ShortHairShortCurly", "ShortHairShortFlat", "ShortHairShortRound", "ShortHairShortWaved", "ShortHairSides", "ShortHairTheCaesar", "ShortHairTheCaesarSidePart", "Turban", "WinterHat1", "WinterHat2", "WinterHat3", "WinterHat4"];
 export declare const AccessoriesTypeOptions: readonly ["Blank", "Kurt", "Prescription01", "Prescription02", "Round", "Sunglasses", "Wayfarers"];
@@ -28,19 +29,4 @@ export declare const AvataaarOptions: {
     skinColor: readonly ["Tanned", "Yellow", "Pale", "Light", "Brown", "DarkBrown", "Black"];
     topType: readonly ["NoHair", "Eyepatch", "Hat", "Hijab", "LongHairBigHair", "LongHairBob", "LongHairBun", "LongHairCurly", "LongHairCurvy", "LongHairDreads", "LongHairFrida", "LongHairFro", "LongHairFroBand", "LongHairMiaWallace", "LongHairNotTooLong", "LongHairShavedSides", "LongHairStraight", "LongHairStraight2", "LongHairStraightStrand", "ShortHairDreads01", "ShortHairDreads02", "ShortHairFrizzle", "ShortHairShaggyMullet", "ShortHairShortCurly", "ShortHairShortFlat", "ShortHairShortRound", "ShortHairShortWaved", "ShortHairSides", "ShortHairTheCaesar", "ShortHairTheCaesarSidePart", "Turban", "WinterHat1", "WinterHat2", "WinterHat3", "WinterHat4"];
 };
-export declare const AvataaarDefaults: {
-    accessoriesType: string;
-    avatarStyle: string;
-    clotheColor: string;
-    clotheType: string;
-    eyebrowType: string;
-    eyeType: string;
-    facialHairColor: string;
-    facialHairType: string;
-    graphicType: string;
-    hairColor: string;
-    hatColor: string;
-    mouthType: string;
-    skinColor: string;
-    topType: string;
-};
+export declare const AvataaarDefaults: AvataaarType;

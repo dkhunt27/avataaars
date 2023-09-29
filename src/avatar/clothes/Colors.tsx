@@ -11,11 +11,11 @@ function makeColor (name: string, color: string) {
     render () {
       return (
         <g
-          id='Color/Palette/Gray-01'
+          id={`Color/Clothe/${this.props.maskID}`}
           mask={`url(#${this.props.maskID})`}
           fillRule='evenodd'
           fill={color}>
-          <rect id='🖍Color' x='0' y='0' width='264' height='110' />
+          <rect id='🖍Color' x='0' y='0' width='264' height='280' />
         </g>
       )
     }

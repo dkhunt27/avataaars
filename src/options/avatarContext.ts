@@ -1,4 +1,4 @@
 import * as React from 'react'
-import { Categories } from '../types'
+import { AvataaarCategories } from '../types'
 
-export const AvatarContext = React.createContext<Categories>({})
+export const AvatarContext = React.createContext<AvataaarCategories>({})

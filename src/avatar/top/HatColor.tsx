@@ -12,7 +12,7 @@ function makeColor (name: string, color: string) {
     render () {
       return (
         <g
-          id='Color/Palette/Gray-01'
+          id={`Color/Hat/${this.props.maskID}`}
           mask={`url(#${this.props.maskID})`}
           fillRule='evenodd'
           fill={color}>
