@@ -48,7 +48,7 @@ export default function PieceComponent(props: Props) {
       {pieceType === 'hatColor' && <HatColors maskID="0005" />}
       {pieceType === 'mouth' && <Mouth />}
       {pieceType === 'nose' && <Nose />}
-      {pieceType === 'skin' && <Skin maskID="5678" />}
+      {pieceType === 'skin' && <Skin maskID="0006" />}
       {pieceType === 'top' && <Top />}
     </svg>
   )

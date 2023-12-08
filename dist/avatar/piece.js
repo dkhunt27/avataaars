@@ -30,7 +30,7 @@ function PieceComponent(props) {
         pieceType === 'hatColor' && React.createElement(HatColor_1.default, { maskID: "0005" }),
         pieceType === 'mouth' && React.createElement(mouth_1.default, null),
         pieceType === 'nose' && React.createElement(nose_1.default, null),
-        pieceType === 'skin' && React.createElement(Skin_1.default, { maskID: "5678" }),
+        pieceType === 'skin' && React.createElement(Skin_1.default, { maskID: "0006" }),
         pieceType === 'top' && React.createElement(top_1.default, null)));
 }
 exports.default = PieceComponent;
